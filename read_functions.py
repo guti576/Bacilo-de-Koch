@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 def get_class_and_functions(file):
     '''
@@ -22,8 +23,8 @@ def get_class_and_functions(file):
             line = line.split('(')
 
             if line[0] == 'class':
-                # Read id
-                pass
+                # Read id with regex (?<=\[).+?(?=\])
+                class_id = re.findall(r'(?<=\[).+?(?=\])', line[1])
+                print(class_id)
 
                 # Read description
-                pass
