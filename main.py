@@ -1,5 +1,5 @@
-import read_functions
+import calc_functions as orf
 
-orf_classes, orf_functions = read_functions.get_class_and_functions('data/tb_functions.pl')
+res = orf.get_ORFs_in_class("1,1,1,0", 'data/tb_functions.pl')
 
-print(orf_classes, orf_functions)
+print(res)
