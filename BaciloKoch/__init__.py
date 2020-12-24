@@ -14,4 +14,4 @@ orf_files = ["tb_data_00.txt", "tb_data_01.txt",
              "tb_data_04.txt", "tb_data_05.txt"]
 
 for orf_file in orf_files:
-    read_orfs_info("data/orfs/" + orf_file)
+    dict = read_orfs_info("data/orfs/" + orf_file)

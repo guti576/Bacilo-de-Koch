@@ -72,14 +72,29 @@ def read_orfs_info(file):
     with open(file, 'r') as f:
 
         # Leemos linea por linea
-        for line in f:
+        line = f.readline()
+        typo = line.split("(")[0]
+
+        # Diccionario con información de orfs enlazados
+        orfs_related = {}
+
+        while typo == "begin":
+            model = re.findall(r'(?<=model\().+?(?=\))', line)[0]
+            linked_orfs = []
+
+            # Leemos el bloque para ese orf
+            while typo != "end":
+                line = f.readline()
+                typo = line.split("(")[0]
+
+                # Si es información de un orf enlazado la procesamos
+                if typo == "tb_to_tb_evalue":
+                    orf = re.findall(r'(?<=tb_to_tb_evalue\().+?(?=\,)', line)[0]
+                    linked_orfs.append(orf)
+
+            # Creamos entrada en el diccionario
+            orfs_related[model] = linked_orfs
+            line = f.readline()
             typo = line.split("(")[0]
 
-            if typo == "begin":
-                print(line)
-            elif typo == "end":
-                print(line)
-            else:
-                pass
-
-    return None
+    return orfs_related
