@@ -1,4 +1,23 @@
-from BaciloKoch.read_functions import read_functions
+from BaciloKoch import functions_df, classes_df
+
+
+def get_classes():
+    '''
+    Devuelve todas las clase funcionales de ORFs
+
+    :return: lista con todas las clases existentes
+    '''
+
+    return classes_df.class_id.unique()
+
+
+def get_classes_by_type(description):
+    '''
+    Obtiene todas las clases funcionales de ORFs con una descripción concreta
+    :return: lista con las clases coincidientes
+    '''
+
+    return classes_df.loc[classes_df.description==description, 'class_id'].unique()
 
 
 def get_ORFs_in_class(clase_id):
@@ -8,9 +27,6 @@ def get_ORFs_in_class(clase_id):
     :param clase_id: clase a la que pertenecen los ORFs
     :return:
     '''
-
-    # Cargamos el dataframe creado al cargar el paquete
-    from BaciloKoch import functions_df
 
     # Devolvemos lista con orfs que pertenecen a la clase
     return functions_df.loc[functions_df.class_id == clase_id, 'orf'].to_list()
