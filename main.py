@@ -1,5 +1,5 @@
-import calc_functions as orf
+from BaciloKoch import calc_functions
 
-res = orf.get_ORFs_in_class("1,1,1,0", 'data/tb_functions.pl')
+res = calc_functions.get_ORFs_in_class("1,1,1,0")
 
 print(res)
