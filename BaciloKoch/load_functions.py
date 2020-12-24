@@ -6,8 +6,8 @@ def read_classes(file):
     '''
     Obtiene la información de las clases funcionales de ORF proporcionadas en el fichero
     file y las inserta en dos dataframe para trabajar con ellas posteriormente. Se ha decidido
-    emplear esta metodología, pese a que es más costosa en tiempo, ya que permite simplificar las
-    tareas de representación y la librería pandas es muy utilizada dentro de la comunidad python.
+    emplear esta metodología ya que permite simplificar las tareas de representación y la librería
+    pandas es muy utilizada dentro de la comunidad python.
 
     :param file: fichero con información de las clases
     :return: dataframe con classes
@@ -66,3 +66,20 @@ def read_functions(file):
                                                      ignore_index=True)
 
     return orf_functions
+
+
+def read_orfs_info(file):
+    with open(file, 'r') as f:
+
+        # Leemos linea por linea
+        for line in f:
+            typo = line.split("(")[0]
+
+            if typo == "begin":
+                print(line)
+            elif typo == "end":
+                print(line)
+            else:
+                pass
+
+    return None

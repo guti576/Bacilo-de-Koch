@@ -30,8 +30,3 @@ def get_ORFs_in_class(clase_id):
 
     # Devolvemos lista con orfs que pertenecen a la clase
     return functions_df.loc[functions_df.class_id == clase_id, 'orf'].to_list()
-
-
-def get_ORFs_in_respiration_class():
-    return None
-
