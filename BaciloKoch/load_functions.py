@@ -69,6 +69,12 @@ def read_functions(file):
 
 
 def read_orfs_info(file):
+    '''
+    Devuelve un diccionario con el detalle de los ORFs relacionados para cada ORF
+
+    :param file: ruta del fichero con el detalle de las relaciones
+    :return: diccionario donde "Key" es un ORF y "Value" una lista con los ORFs relaciones
+    '''
     with open(file, 'r') as f:
 
         # Leemos linea por linea

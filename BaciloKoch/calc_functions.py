@@ -25,7 +25,7 @@ def get_ORFs_in_class(clase_id):
     Devuelve el número de ORFs que pertenecen a la clase "clase_id"
 
     :param clase_id: clase a la que pertenecen los ORFs
-    :return:
+    :return: lista de ORFs que pertenecen a la clase
     '''
 
     # Devolvemos lista con orfs que pertenecen a la clase
