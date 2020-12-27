@@ -32,7 +32,6 @@ def get_ORFs_in_class(clase_id):
     orfs_in_class = functions_df.loc[functions_df.class_id == clase_id, 'orf'].to_list()
 
     # Guardamos valor en Dataframe para poder representarlo
-    classes_df["ORFs_in_class"] = 0
     classes_df.loc[classes_df.class_id == clase_id,
                    'ORFs_in_class'] = len(orfs_in_class)
 

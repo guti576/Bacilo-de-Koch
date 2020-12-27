@@ -33,7 +33,8 @@ def read_classes(file):
 
         # Dataframe para las clases
         orf_classes = pd.DataFrame(columns=['class_id', 'dim0', 'dim1',
-                                            'dim2', 'dim3', 'description'])
+                                            'dim2', 'dim3', 'description',
+                                            'ORFs_in_class'])
 
         # Leemos el fichero origen
         for line in f:
@@ -51,7 +52,8 @@ def read_classes(file):
                                                   'dim1': dims[1],
                                                   'dim2': dims[2],
                                                   'dim3': dims[3],
-                                                  'description': class_desc.strip()},
+                                                  'description': class_desc.strip(),
+                                                  'ORFs_in_class': 0},
                                                   ignore_index=True)
     return orf_classes
 

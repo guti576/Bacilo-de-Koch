@@ -10,7 +10,7 @@ class TestBaciloKochFunctions(unittest.TestCase):
 
     def test_df_columns(self):
         print("Testing dataframe number of columns")
-        self.assertEqual(len(self.classes_df.columns), 6)
+        self.assertEqual(len(self.classes_df.columns), 7)
         self.assertEqual(len(self.functions_df.columns), 4)
 
     def test_read_orfs_info(self):
