@@ -1,4 +1,6 @@
 from BaciloKoch import functions_df, classes_df
+import warnings
+warnings.simplefilter("ignore", UserWarning)
 
 
 def get_classes():
@@ -52,9 +54,8 @@ def get_related_ORFs_in_ORF(orf):
     return related_ORFs
 
 
-def get_classes_by_ORFs_with_pattern(pattern):
+def get_classes_by_ORFs_regex(pattern):
     return functions_df.loc[functions_df.description.str.contains(pattern), 'class_id'].to_list()
-
 
 def dims_greater_than_zero_and_divisible(m):
     '''
