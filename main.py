@@ -1,10 +1,13 @@
-from BaciloKoch import calc_functions
+from BaciloKoch import calc_functions, plot_functions
 
 # Mostramos número de ORFs para cada clase
 for clase in calc_functions.get_classes():
     # Calculamos ORFs de la clase
     n_orfs = calc_functions.get_ORFs_in_class(clase)
     print("ORFs en la clase [{}]: {}".format(clase, len(n_orfs)))
+
+# Lo representamos gráficamente
+#plot_functions.plot_ORFs_per_class()
 
 # Mostramos ORFs que pertenecen a la clase con descripción "Respiration"
 for clase in calc_functions.get_classes_by_type("Respiration"):

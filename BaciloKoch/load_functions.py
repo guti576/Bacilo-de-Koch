@@ -2,6 +2,23 @@ import pandas as pd
 import re
 
 
+def parse_dimensions(dim):
+    '''
+    Dada una dimensión en texto devuelve las cuatro componentes que la forman
+
+    :param dim: dimensión en formato texto
+    :return: lista de enteros con los valores de las 4 dimensiones
+    '''
+
+    dim = dim.split(",")
+
+    # Convertimos a lista con tipos entero
+    for i in range(0, len(dim)):
+        dim[i] = int(dim[i])
+
+    return dim
+
+
 def read_classes(file):
     '''
     Obtiene la información de las clases funcionales de ORF proporcionadas en el fichero
@@ -15,7 +32,8 @@ def read_classes(file):
     with open(file, 'r') as f:
 
         # Dataframe para las clases
-        orf_classes = pd.DataFrame(columns=['class_id', 'description'])
+        orf_classes = pd.DataFrame(columns=['class_id', 'dim0', 'dim1',
+                                            'dim2', 'dim3', 'description'])
 
         # Leemos el fichero origen
         for line in f:
@@ -26,10 +44,15 @@ def read_classes(file):
                 class_id = re.findall(r'(?<=\[).+?(?=\])', line)[0]
                 class_desc = re.findall(r'(?<=\").+?(?=\")', line)[0]
 
-                # Insertamos en dataframe
+                # Calculamos dimensiones e insertamos en dataframe
+                dims = parse_dimensions(class_id)
                 orf_classes = orf_classes.append({'class_id': class_id,
+                                                  'dim0': dims[0],
+                                                  'dim1': dims[1],
+                                                  'dim2': dims[2],
+                                                  'dim3': dims[3],
                                                   'description': class_desc.strip()},
-                                                 ignore_index=True)
+                                                  ignore_index=True)
     return orf_classes
 
 
