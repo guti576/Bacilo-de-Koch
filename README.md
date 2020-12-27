@@ -22,6 +22,13 @@ siguientes módulos:
 3. **_plot_functions_**: funciones que permite la representación gráfica de resultados. Se hace uso
     de la librería seaborn, ampliamente utilizada en la comunidad de científicos de datos y que
    presenta un nivel superior de abstracción sobre matplotlib.
+   
+## Licencia
+El material recogido en este repositorio se recoge bajo licenciamiento 
+Creative Commons Atribución/Reconocimiento-NoComercial-CompartirIgual 4.0 Licencia Pública Internacional — CC BY-NC-SA 4.0
+
+Consulte la página [https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es]() para más información
+o bien lea el archivo license.txt 
 
 
 
