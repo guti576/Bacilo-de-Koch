@@ -25,20 +25,19 @@ for k,v in patrones.items():
 
 # 2.2 Calculamos el número promedio de ORFs con los cuales se relacionan
 # los ORFs con el patrón indicado en su descripción.
-ORFs_relacionados_medio = 0
-protein = calc_functions.get_ORFs_by_pattern("protein")
-for orf in protein:
-    ORFs_relacionados_medio += len(calc_functions.get_related_ORFs_in_ORF(orf))
 
-ORFs_relacionados_medio = ORFs_relacionados_medio/len(protein)
-print("\nEl número promedio de ORFs con los cuales se relacionan los ORFs con el patrón 'protein'"
-      "es de {}".format(round(ORFs_relacionados_medio, 2)))
+for k,v in patrones.items():
+    ORFs_relacionados_medio = 0
+    related = calc_functions.get_ORFs_by_regex(k)
+    for orf in related:
+        ORFs_relacionados_medio += len(calc_functions.get_related_ORFs_in_ORF(orf))
 
-##########################################################
-# FALTA LA OTRA CONDICION palabra de 13 letras con hydro
-##########################################################
-# Regex ( |^)[\w*hydro*\w]{13}( |$)
+    ORFs_relacionados_medio = ORFs_relacionados_medio/len(related)
+    print("\nEl número promedio de ORFs relacionanados con los ORFs con patrón v"
+          "es de {}".format(round(ORFs_relacionados_medio, 2)))
 
+# 3.1 Para cada entero M entre 2 y 9, calculamos el número de clases que tienen
+# como mínimo una dimensión mayor estricta (>) que 0 y a la vez múltiple de M.
 for i in range(2,10):
     clases = calc_functions.dims_greater_than_zero_and_divisible(i)
     print("M={}: {} clases".format(i, len(clases)))

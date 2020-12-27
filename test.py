@@ -8,19 +8,23 @@ class TestBaciloKochFunctions(unittest.TestCase):
         cls.classes_df = load_functions.read_classes("data/tb_functions.pl")
         cls.functions_df = load_functions.read_functions("data/tb_functions.pl")
 
+
     def test_df_columns(self):
         print("Testing dataframe number of columns")
         self.assertEqual(len(self.classes_df.columns), 7)
         self.assertEqual(len(self.functions_df.columns), 4)
+
 
     def test_read_orfs_info(self):
         print("Testing ORFs relationships")
         self.assertEqual(load_functions.read_orfs_info("data/orfs/tb_data_00.txt")['tb3071'],
                          ['tb1887', 'tb3131', 'tb2620', 'tb1760', 'tb2212', 'tb3721', 'tb1770'])
 
+
     def test_get_classes(self):
         print("Testing get_classes function")
         self.assertIn("1,0,0,0", calc_functions.get_classes())
+
 
     def test_get_classes_by_type(self):
         print("Testing get_classes_by_type function")
@@ -36,10 +40,12 @@ class TestBaciloKochFunctions(unittest.TestCase):
         self.assertNotIn('tb1905', test_list)
 
 
-    def test_get_ORFs_by_pattern(self):
-        print("Testing get_ORFs_by_pattern function")
-        test_list = calc_functions.get_ORFs_by_pattern("protein")
+    def test_get_ORFs_by_regex(self):
+        print("Testing test_get_ORFs_by_regex function")
+        test_list = calc_functions.get_ORFs_by_regex("protein")
         self.assertEqual(len(test_list), 294)
+        test_list = calc_functions.get_ORFs_by_regex("( |^)[\w*hydro*\w]{13}( |$)")
+        self.assertEqual(len(test_list), 171)
 
 
     def test_dims_greater_than_zero_and_divisible(self):
