@@ -31,3 +31,7 @@ print("\nEl número promedio de ORFs con los cuales se relacionan los ORFs con e
 ##########################################################
 # FALTA LA OTRA CONDICION palabra de 13 letras con hydro
 ##########################################################
+
+for i in range(2,10):
+    clases = calc_functions.dims_greater_than_zero_and_divisible(i)
+    print("M={}: {} clases".format(i, len(clases)))

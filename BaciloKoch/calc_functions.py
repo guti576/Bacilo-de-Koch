@@ -66,4 +66,8 @@ def dims_greater_than_zero_and_divisible(m):
     :return:
     '''
 
-    return None
+    res = classes_df.loc[((classes_df.dim0 > 0) & (classes_df.dim0 % m == 0)) |
+                         ((classes_df.dim1 > 0) & (classes_df.dim1 % m == 0)) |
+                         ((classes_df.dim2 > 0) & (classes_df.dim2 % m == 0)) |
+                         ((classes_df.dim3 > 0) & (classes_df.dim3 % m == 0)), 'class_id'].to_list()
+    return res

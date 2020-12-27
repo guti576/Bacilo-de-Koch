@@ -42,5 +42,12 @@ class TestBaciloKochFunctions(unittest.TestCase):
         self.assertEqual(len(test_list), 294)
 
 
+    def test_dims_greater_than_zero_and_divisible(self):
+        print("Testing dims_greater_than_zero_and_divisible function")
+        self.assertTrue(calc_functions.dims_greater_than_zero_and_divisible(2))
+        self.assertTrue(calc_functions.dims_greater_than_zero_and_divisible(9))
+        self.assertFalse(calc_functions.dims_greater_than_zero_and_divisible(70))
+
+
 if __name__ == '__main__':
     unittest.main()
