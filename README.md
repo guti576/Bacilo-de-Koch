@@ -29,6 +29,12 @@ con la instalación ejecute el siguiente comando:
 
 `pip install -r requirements.txt`
 
+## Testing
+El paquete incluye una serie de test unitarios que garantizan el correcto funcionamiento de las funciones recogidas
+en el paquete. Además, se ha hecho uso de la librería Coverage.py para evaluar el grado de cobertura de los tests
+definidos. Para conocer más detalles del paquete Coverage.py consulte la documentación oficial en la página 
+[https://coverage.readthedocs.io/en/coverage-5.3.1/]()
+
 ## Licencia
 El material recogido en este repositorio se recoge bajo licenciamiento 
 Creative Commons Atribución/Reconocimiento-NoComercial-CompartirIgual 4.0 Licencia Pública Internacional — CC BY-NC-SA 4.0
