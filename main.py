@@ -7,7 +7,7 @@ for clase in calc_functions.get_classes():
     print("ORFs en la clase [{}]: {}".format(clase, len(n_orfs)))
 
 #plot_functions.plot_ORFs_per_class()  # Representamos el resultado
-plot_functions.pairGrid()
+plot_functions.plot_ORFs_per_class()
 
 # 1.2 Mostramos ORFs que pertenecen a la clase con descripción "Respiration"
 for clase in calc_functions.get_classes_by_type("Respiration"):
