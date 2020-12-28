@@ -23,6 +23,12 @@ siguientes módulos:
     de la librería seaborn, ampliamente utilizada en la comunidad de científicos de datos y que
    presenta un nivel superior de abstracción sobre matplotlib.
    
+## Instalación
+Las dependencias del proyecto se encuentran recogidas en el fichero _requirements.txt_ . Para proceder
+con la instalación ejecute el siguiente comando:
+
+`pip install -r requirements.txt`
+
 ## Licencia
 El material recogido en este repositorio se recoge bajo licenciamiento 
 Creative Commons Atribución/Reconocimiento-NoComercial-CompartirIgual 4.0 Licencia Pública Internacional — CC BY-NC-SA 4.0
