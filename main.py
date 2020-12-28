@@ -6,8 +6,8 @@ for clase in calc_functions.get_classes():
     n_orfs = calc_functions.get_ORFs_in_class(clase)
     print("ORFs en la clase [{}]: {}".format(clase, len(n_orfs)))
 
-# Lo representamos gráficamente
-plot_functions.plot_ORFs_per_class()
+#plot_functions.plot_ORFs_per_class()  # Representamos el resultado
+plot_functions.pairGrid()
 
 # 1.2 Mostramos ORFs que pertenecen a la clase con descripción "Respiration"
 for clase in calc_functions.get_classes_by_type("Respiration"):
@@ -19,9 +19,14 @@ for clase in calc_functions.get_classes_by_type("Respiration"):
 patrones = {'protein': "protein",
             '( |^)[\w*hydro*\w]{13}( |$)': "hydro de 13 caracteres"}
 
+res_dict = {}  # Diccionario para almacenar valores a representar
+
 for k,v in patrones.items():
     res = calc_functions.get_classes_by_ORFs_regex(k)
+    res_dict[v] = len(res)
     print("\nEl número de clases con {} en la descripción es de {}".format(v, len(res)))
+
+plot_functions.plot_pie_from_dict(res_dict)  # Representamos el resultado
 
 # 2.2 Calculamos el número promedio de ORFs con los cuales se relacionan
 # los ORFs con el patrón indicado en su descripción.
