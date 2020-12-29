@@ -1,6 +1,7 @@
 from BaciloKoch import classes_df, functions_df
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 def plot_ORFs_per_class(action='save'):
@@ -14,7 +15,6 @@ def plot_ORFs_per_class(action='save'):
     se muestra por pantalla el gráfico.
     '''
 
-    plt.figure(num=1)
     fig, axs = plt.subplots(ncols=3)
 
     first_third = round(classes_df.shape[0]/3)
@@ -46,6 +46,23 @@ def plot_pie_from_dict(dict):
     categorias = list(dict.keys())
     valores = list(dict.values())
 
-    plt.figure(num=2)
+    plt.figure()
     plt.pie(valores, labels=categorias, autopct='%1.1f%%')
-    plt.show()
+    plt.show(block=False)
+
+
+def bar_two_axis(dict1, dict2):
+
+    d = {'pattern1': [1, 2], 'pattern2': [3, 4]}
+    df = pd.DataFrame(data=d)
+
+    # plot
+    plt.figure()
+    ax = df.plot(kind='bar', secondary_y=['pattern1'])
+    ax.set_ylabel('Foo')
+    ax.right_ax.set_ylabel('Bar')
+
+    ax.grid(True)
+    ax.set_axisbelow(True)
+
+    plt.show(block=True)
