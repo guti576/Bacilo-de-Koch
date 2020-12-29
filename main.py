@@ -42,6 +42,7 @@ for k,v in patrones.items():
           "es de {}".format(v, ORFs_relacionados_medio))
 
 plot_functions.bar_two_axis(res_dict, list(patrones.values()))
+
 # 3.1 Para cada entero M entre 2 y 9, calculamos el número de clases que tienen
 # como mínimo una dimensión mayor estricta (>) que 0 y a la vez múltiple de M.
 for i in range(2,10):

@@ -46,13 +46,15 @@ def bar_two_axis(resultDict, labels):
 
     df = pd.DataFrame(data=resultDict)
 
-    # plot
-    ax = df.plot(kind='bar', secondary_y=['Número de clases'])
+    # Definimos el segundo eje
+    ax = df.plot(kind='bar', secondary_y=['Número de clases']) # legend=None
     ax.set_ylabel('Promedio de ORFs relacionanado')
     ax.right_ax.set_ylabel('Número de clases')
+    ax.right_ax.legend(["Número de clases"], loc=10, bbox_to_anchor=(0.8, 1.1))
 
     ax.grid(True)
     ax.set_axisbelow(True)
     ax.set_xticklabels(labels, rotation=0)
+    ax.legend(loc=10, bbox_to_anchor=(0.2, 1.1))
 
     plt.show(block=True)
