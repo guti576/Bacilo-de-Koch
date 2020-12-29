@@ -42,27 +42,17 @@ def plot_ORFs_per_class(action='save'):
         plt.show(block=False)
 
 
-def plot_pie_from_dict(dict):
-    categorias = list(dict.keys())
-    valores = list(dict.values())
+def bar_two_axis(resultDict, labels):
 
-    plt.figure()
-    plt.pie(valores, labels=categorias, autopct='%1.1f%%')
-    plt.show(block=False)
-
-
-def bar_two_axis(dict1, dict2):
-
-    d = {'pattern1': [1, 2], 'pattern2': [3, 4]}
-    df = pd.DataFrame(data=d)
+    df = pd.DataFrame(data=resultDict)
 
     # plot
-    plt.figure()
-    ax = df.plot(kind='bar', secondary_y=['pattern1'])
-    ax.set_ylabel('Foo')
-    ax.right_ax.set_ylabel('Bar')
+    ax = df.plot(kind='bar', secondary_y=['Número de clases'])
+    ax.set_ylabel('Promedio de ORFs relacionanado')
+    ax.right_ax.set_ylabel('Número de clases')
 
     ax.grid(True)
     ax.set_axisbelow(True)
+    ax.set_xticklabels(labels, rotation=0)
 
     plt.show(block=True)
