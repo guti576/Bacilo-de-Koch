@@ -23,11 +23,17 @@ siguientes módulos:
     de la librería seaborn, ampliamente utilizada en la comunidad de científicos de datos y que
    presenta un nivel superior de abstracción sobre matplotlib.
    
-## Instalación
+## Instalación y ejecución
 Las dependencias del proyecto se encuentran recogidas en el fichero _requirements.txt_ . Para proceder
 con la instalación ejecute el siguiente comando:
 
 `pip install -r requirements.txt`
+
+Una vez instalados los paquetes necesarios, descomprimir el fichero comprimido que contiene todos 
+los archivos del programa, y ejecutamos el archivo _main.py_ con el siguiente comando desde el directorio
+donde se encuentra el fichero:
+
+`python3 main.py`
 
 ## Testing
 El paquete incluye una serie de test unitarios que garantizan el correcto funcionamiento de las funciones recogidas

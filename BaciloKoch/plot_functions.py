@@ -4,15 +4,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def plot_ORFs_per_class(action='save'):
+def plot_ORFs_per_class():
     '''
     Función que nos permite representar el número de ORFs que pertenecen a cada clase. Debido al
     extenso número de clases, se ha subdividido las clases en tres grupos diferentes, aportando mayor
     legibilidad al conjunto. El tipo de gráfica escogido es de barras, que nos permite detectar
     fácilmente clases con más o menos ORFs asociados.
-
-    @:param action: si "save" se guarda el gráfico en la carpeta "plot". En caso contrario
-    se muestra por pantalla el gráfico.
     '''
 
     fig, axs = plt.subplots(ncols=3)
@@ -36,13 +33,18 @@ def plot_ORFs_per_class(action='save'):
     axs[1].set_ylabel("")
     axs[2].set_ylabel("")
 
-    if action == "save":
-        plt.savefig('plots/ORFs_por_clase.png')
-    else:
-        plt.show(block=False)
+    plt.show(block=False)
 
 
 def bar_two_axis(resultDict, labels):
+    '''
+    Función que permite representar, para cada tipo de patrón requerido, el número de clases
+    que pertenecen al mismo y el promedio de ORFs relacionado. Se emplea una gráfica de barras
+    con dos ejes (derecha e izquierda). Por tanto, para cada parámetro tendremos dos barras
+    asociadas.
+    :param resultDict: diccionario con los valores a representar
+    :param labels: etiquetas que pondremos a cada patrón representado
+    '''
 
     df = pd.DataFrame(data=resultDict)
 
@@ -61,6 +63,10 @@ def bar_two_axis(resultDict, labels):
 
 
 def plot_bar_chart(dict):
+    '''
+    Simple gráfica de barras que permite representar los resultados del ejercicio 3.
+    :param dict: diccionario con los valores resultantes para cada valor de M
+    '''
 
     df = pd.DataFrame(data=dict)
 
@@ -70,7 +76,13 @@ def plot_bar_chart(dict):
 
 
 def plot_exercise_separator(number):
+    '''
+    Imprime una cabecera por pantalla para diferencias los distintos ejercicios que se
+    plantean en la práctica.
+    :param number: número del ejercicio
+    '''
+    print("\n")
     print("*" * 30)
     print("Ejercicio " + number)
     print("*" * 30)
-
+    print("\n")
