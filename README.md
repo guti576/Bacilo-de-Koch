@@ -12,20 +12,20 @@ El paquete está constituido por los
 siguientes módulos:
 
 1. **_read_functions_**: funciones para cargar la información sobre "clases" y "funciones" del
-   Bacilo de Koch. La información  leída de los ficheros origen se inserta en dataFrames de pandas
+   Bacilo de Koch. La información leída de los ficheros origen se inserta en dataFrames de pandas
    que nos permitirán realizar cálculos y representaciones de forma sencilla. Se ha escogido esta
    metodología de trabajo por ser una librería ampliamente utilizada en la comunidad.
 
-2. **_calc_functions_**: implementa funciones que nos permiten realizar cálculos en relación a las
-   "clases" y "funciones" del Bacilo de Kock.
+2. **_calc_functions_**: implementa funciones que nos permiten realizar cálculos en relación con las
+   "clases" y "funciones" del Bacilo de Koch.
 
 3. **_plot_functions_**: funciones que permite la representación gráfica de resultados. Se hace uso
     de la librería seaborn, ampliamente utilizada en la comunidad de científicos de datos y que
    presenta un nivel superior de abstracción sobre matplotlib.
    
 ## Instalación y ejecución
-Las dependencias del proyecto se encuentran recogidas en el fichero _requirements.txt_ . Para proceder
-con la instalación ejecute el siguiente comando:
+Las dependencias del proyecto se encuentran recogidas en el fichero _requirements.txt_. Para proceder
+con la instalación, ejecute el siguiente comando:
 
 `pip install -r requirements.txt`
 
@@ -35,10 +35,14 @@ donde se encuentra el fichero:
 
 `python3 main.py`
 
+La ejecución del programa mostrará los resultados por pantalla y además generará automáticamente las diferentes
+gráficas que se requieren. Estas gráficas se mostrarán en ventanas que abrirá el terminal, incluyendo una figura
+por ventana.
+
 ## Testing
 El paquete incluye una serie de test unitarios que garantizan el correcto funcionamiento de las funciones recogidas
 en el paquete. Además, se ha hecho uso de la librería Coverage.py para evaluar el grado de cobertura de los tests
-definidos. Para conocer más detalles del paquete Coverage.py consulte la documentación oficial en la página 
+definidos. Para conocer más detalles del paquete Coverage.py, consulte la documentación oficial en la página 
 [https://coverage.readthedocs.io/en/coverage-5.3.1/]()
 
 Para lanzar los test, ejecutar el siguiente comando en un terminal:
