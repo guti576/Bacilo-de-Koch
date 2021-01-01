@@ -35,6 +35,14 @@ en el paquete. Además, se ha hecho uso de la librería Coverage.py para evaluar
 definidos. Para conocer más detalles del paquete Coverage.py consulte la documentación oficial en la página 
 [https://coverage.readthedocs.io/en/coverage-5.3.1/]()
 
+Para lanzar los test, ejecutar el siguiente comando en un terminal:
+
+`coverage run -m unittest discover`
+
+Esto generará un informe que se puede consultar mediante el siguiente comando:
+
+`coverage report -m`
+
 ## Licencia
 El material recogido en este repositorio se recoge bajo licenciamiento 
 Creative Commons Atribución/Reconocimiento-NoComercial-CompartirIgual 4.0 Licencia Pública Internacional — CC BY-NC-SA 4.0
