@@ -8,7 +8,7 @@ for clase in calc_functions.get_classes():
     n_orfs = calc_functions.get_ORFs_in_class(clase)
     print("ORFs en la clase [{}]: {}".format(clase, len(n_orfs)))
 
-plot_functions.plot_ORFs_per_class("show")  # Representamos el resultado
+plot_functions.plot_ORFs_per_class()  # Representamos el resultado
 
 # 1.2 Mostramos ORFs que pertenecen a la clase con descripción "Respiration"
 plot_functions.plot_exercise_separator("1.2")
