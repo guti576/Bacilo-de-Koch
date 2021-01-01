@@ -57,4 +57,20 @@ def bar_two_axis(resultDict, labels):
     ax.set_xticklabels(labels, rotation=0)
     ax.legend(loc=10, bbox_to_anchor=(0.2, 1.1))
 
+    plt.show(block=False)
+
+
+def plot_bar_chart(dict):
+
+    df = pd.DataFrame(data=dict)
+
+    plt.figure()
+    sns.barplot(data=df, x="M", y="Num. de clases")
     plt.show(block=True)
+
+
+def plot_exercise_separator(number):
+    print("*" * 30)
+    print("Ejercicio " + number)
+    print("*" * 30)
+
